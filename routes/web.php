@@ -16,3 +16,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/cursos', function () {
+    return "Bienvenido a curso";
+});
+Route::get('/cursos/create', function () {
+    return "en esta pagina se crea el curso";
+});
+
+// Route::get('/cursos/{curso}', function ($curso) {
+//     return "Bienvenido al Curso :$curso"; 
+// });
+
+Route::get('/cursos/{curso}/{categoria?}', function ($curso,$categoria=null) {
+    if($categoria){
+        return "Curso:$curso Categoria: $categoria";
+    }else{
+        return "Bienvenido al Curso :$curso";
+    }
+});
