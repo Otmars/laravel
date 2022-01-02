@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,24 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/cursos', function () {
-    return "Bienvenido a curso";
-});
-Route::get('/cursos/create', function () {
-    return "en esta pagina se crea el curso";
-});
+Route::get('/', HomeController::class);
 
-// Route::get('/cursos/{curso}', function ($curso) {
-//     return "Bienvenido al Curso :$curso"; 
+Route::get('/cursos', [CursoController::class, 'index']);
+
+Route::get('/cursos/create',[CursoController::class, 'create']);
+
+Route::get('/cursos/{curso}',[CursoController::class, 'show']);
+
+// Route::get('/cursos/{curso}/{categoria?}', function ($curso,$categoria=null) {
+//     if($categoria){
+//         return "Curso:$curso Categoria: $categoria";
+//     }else{
+//         return "Bienvenido al Curso :$curso";
+//     }
 // });
-
-Route::get('/cursos/{curso}/{categoria?}', function ($curso,$categoria=null) {
-    if($categoria){
-        return "Curso:$curso Categoria: $categoria";
-    }else{
-        return "Bienvenido al Curso :$curso";
-    }
-});
