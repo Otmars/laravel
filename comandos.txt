@@ -2,3 +2,27 @@
 php artisan migrate:fresh --seed
 php artisan make:factory CursoFactory --model=Curso
 php artisan make:factory CursoFactory
+
+
+use \App\Models\Curso
+45: $curso = new Curso
+46: $curso
+47: $curso->all();
+48: $curso->all();
+49: $curso = Curso::where('categoria'='desarrollo web')
+50: $curso = Curso::where('categoria','desarrollo web');
+51: $curso
+52: $curso = Curso::where('categoria','desarrollo web')->get();
+53: $curso = Curso::where('categoria','desarrollo web')orderBy('id','desc')->get();
+54: $curso = Curso::where('categoria','desarrollo web')->orderBy('id','desc')->get();
+55: $curso = Curso::where('categoria','desarrollo web')->orderBy('name','desc')->get();
+56: $curso = Curso::where('categoria','desarrollo web')->orderBy('name','asc')->get();
+57: help
+58: $curso = Curso::where('categoria','desarrollo web')->orderBy('name','asc')->first();
+59: $curso = Curso::select('name','description');
+60: $curso = Curso::select('name','description')->get();
+61: $curso = Curso::select('name as nombre','description')->get();
+62: $curso = Curso::select('name as nombre','description')->take(5)get();
+63: $curso = Curso::select('name as nombre','description')->take(5)->get();
+64: $curso = Curso::find(5);
+65: $curso->name
