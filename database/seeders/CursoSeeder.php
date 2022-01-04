@@ -14,20 +14,6 @@ class CursoSeeder extends Seeder
      */
     public function run()
     {
-        $curso = new Curso();
-        $curso->name = "laravel";
-        $curso->description = "El mej";
-        $curso->categoria = "Desarollo web";
-
-        $curso->save();
-        unset($curso);
-        $curso = new Curso();
-        $curso->name = "laravel";
-        $curso->description = "El mej";
-        $curso->categoria = "Desarollo web";
-
-        $curso->save();
-        unset($curso);
-        
+     Curso::factory(50)->create();
     }
 }

@@ -1,0 +1,4 @@
+
+php artisan migrate:fresh --seed
+php artisan make:factory CursoFactory --model=Curso
+php artisan make:factory CursoFactory
