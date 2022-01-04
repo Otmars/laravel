@@ -5,6 +5,7 @@ use App\Models\Curso;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
+
 class CursoController extends Controller
 {
     public function index() {
@@ -23,11 +24,18 @@ class CursoController extends Controller
             'categoria' => 'required'
         ]);
 
-        $curso = new Curso();
-        $curso->name = $request->name;
-        $curso->description = $request->description;
-        $curso->categoria = $request->categoria;
-        $curso->save();
+        // $curso = new Curso();
+        // $curso->name = $request->name;
+        // $curso->description = $request->description;
+        // $curso->categoria = $request->categoria;
+        // $curso->save();
+        // $curso = Curso::create([
+        //     'name' => $request->name,
+        //     'description' => $request->description,
+        //     'categoria' => $request->categoria
+        // ]);
+        //return $request->all();
+        $curso = Curso::create($request->all());
         return redirect()->route('curso.show', $curso);
         // return redirect()->route('curso.show',$curso->id);
     }
@@ -49,10 +57,11 @@ class CursoController extends Controller
             'categoria' => 'required'
         ]);
 
-        $curso->name = $request->name;
-        $curso->description = $request->description;
-        $curso->categoria = $request->categoria;
-        $curso->save();
+        // $curso->name = $request->name;
+        // $curso->description = $request->description;
+        // $curso->categoria = $request->categoria;
+        // $curso->save();
+        $curso->update($request->all());
         return redirect()->route('curso.show', $curso);
     }
 }
