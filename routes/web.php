@@ -28,6 +28,7 @@ Route::get('cursos/{curso}/edit',[CursoController::class, 'edit'])->name('curso.
 
 Route::put('cursos/{curso}', [CursoController::class, 'update'])->name('curso.update');
 
+Route::delete('cursos/{curso}',[CursoController::class, 'destroy'])->name('curso.destroy');
 // Route::get('/cursos/{curso}/{categoria?}', function ($curso,$categoria=null) {
 //     if($categoria){
 //         return "Curso:$curso Categoria: $categoria";

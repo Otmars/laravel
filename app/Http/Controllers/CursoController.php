@@ -64,5 +64,9 @@ class CursoController extends Controller
         $curso->update($request->all());
         return redirect()->route('curso.show', $curso);
     }
+    public function destroy (Curso $curso){
+        $curso->delete();
+        return  redirect()->route('curso.index');
+    }
 }
 
