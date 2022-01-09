@@ -2,7 +2,7 @@
 @section('title','Cursos')
 @section('content')
 <h1>index Cursos</h1>
-<a href="{{route('curso.crear')}}">Crear curso</a>
+<a href="{{route('curso.create')}}">Crear curso</a>
 <ul>
     @foreach($curso as $datos)
         <li>

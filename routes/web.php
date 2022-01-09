@@ -15,20 +15,21 @@ use App\Http\Controllers\CursoController;
 */
 
 Route::get('/', HomeController::class);
+// Route::resource('cursos', CursoController::class);
+Route::resource('asignaturas', CursoController::class)->parameters(['asignaturas'=>'curso'])->names('curso');
+// Route::get('cursos', [CursoController::class, 'index'])->name('curso.index');
 
-Route::get('cursos', [CursoController::class, 'index'])->name('curso.index');
+// Route::get('cursos/create',[CursoController::class, 'create'])->name('curso.crear');
 
-Route::get('cursos/create',[CursoController::class, 'create'])->name('curso.crear');
+// Route::post('cursos',[CursoController::class,'store'])->name('curso.store');
 
-Route::post('cursos',[CursoController::class,'store'])->name('curso.store');
+// Route::get('cursos/{curso}',[CursoController::class, 'show'])->name('curso.show');
 
-Route::get('cursos/{curso}',[CursoController::class, 'show'])->name('curso.show');
+// Route::get('cursos/{curso}/edit',[CursoController::class, 'edit'])->name('curso.edit');
 
-Route::get('cursos/{curso}/edit',[CursoController::class, 'edit'])->name('curso.edit');
+// Route::put('cursos/{curso}', [CursoController::class, 'update'])->name('curso.update');
 
-Route::put('cursos/{curso}', [CursoController::class, 'update'])->name('curso.update');
-
-Route::delete('cursos/{curso}',[CursoController::class, 'destroy'])->name('curso.destroy');
+// Route::delete('cursos/{curso}',[CursoController::class, 'destroy'])->name('curso.destroy');
 // Route::get('/cursos/{curso}/{categoria?}', function ($curso,$categoria=null) {
 //     if($categoria){
 //         return "Curso:$curso Categoria: $categoria";
