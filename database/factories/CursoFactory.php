@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-
+use Illuminate\Support\Str;
 class CursoFactory extends Factory
 {
     /**
@@ -12,10 +12,11 @@ class CursoFactory extends Factory
      * @return array
      */
     public function definition()
-    {
+    {   $name = $this->faker->sentence();
         return [
-            'name' => $this->faker->sentence(),
+            'name' => $name,
             'description' => $this->faker->paragraph(),
+            'slug'=> Str::slug($name, '-'),
             'categoria' => $this->faker->randomElement(['desarrollo web','Diseño web'])
         ];
     }

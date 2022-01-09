@@ -15,8 +15,8 @@ use App\Http\Controllers\CursoController;
 */
 
 Route::get('/', HomeController::class);
-// Route::resource('cursos', CursoController::class);
-Route::resource('asignaturas', CursoController::class)->parameters(['asignaturas'=>'curso'])->names('curso');
+Route::resource('curso', CursoController::class);
+// Route::resource('asignaturas', CursoController::class)->parameters(['asignaturas'=>'curso'])->names('curso');
 // Route::get('cursos', [CursoController::class, 'index'])->name('curso.index');
 
 // Route::get('cursos/create',[CursoController::class, 'create'])->name('curso.crear');
